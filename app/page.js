@@ -22,17 +22,14 @@ export default function Home() {
           <span className="sample__date popStartDate"></span>
           <span className="popExDate"></span>
         </div>
-        <div className="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden p-1 bg-white overflow-x-auto">
-          <div className="scroll_btn swiper-wrapper flex flex-wrap gap-2 min-w-72 h-auto *:w-7 *:px-4 *:py-1.5 *:border *:border-slate-600 *:rounded-full *:text-sm *:font-bold *:text-slate-600 ">
-            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(1)}>행사코123너1</div>
-            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(2)}>행사코너1</div>
-            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(3)}>행사코너1</div>
-            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(4)}>행사코너1</div>
-            <div className="btn_comm btn_1 swiper-slide swiper-slide-next">행사코너2</div>
-            <div className="btn_comm btn_1 swiper-slide swiper-slide-next">행사코너2</div>
-            <div className="btn_comm btn_1 swiper-slide swiper-slide-next">행사코너2</div>
-            <div className="btn_comm btn_1 swiper-slide swiper-slide-next">행사코너2</div>
-            <div className="btn_comm btn_1 swiper-slide swiper-slide-next">행사코너2</div>
+        <div className="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden overflow-x-auto flex p-1 bg-white">
+          <div className="scroll_btn swiper-wrapper flex flex-row gap-2 overflow-x-auto *:flex *:w-auto *:px-4 *:py-1.5 *:border *:border-slate-600 *:rounded-full *:text-sm *:font-bold *:text-slate-600 ">
+            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(1)}>한글</div>
+            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(2)}>한글쓰면 이상하게 작성된다</div>
+            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(3)}>type3</div>
+            <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType(4)}>type4</div>
+            <div className="btn_comm btn_1 swiper-slide swiper-slide-next">type</div>
+
           </div>
           <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
