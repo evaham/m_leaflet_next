@@ -24,7 +24,7 @@ export default function HeaderBar() {
   const title = titleMap[pathname] || "오류";
 
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-center w-full min-h-16 p-2 bg-blue-900 text-white">
+    <div className="sticky top-0 z-50 flex items-center justify-center w-full h-16 p-2 bg-blue-900 text-white">
       <div className="flex flex-col items-center justify-center w-12 h-full">
         {!hideBackButtonPaths.includes(pathname) && (
           <button className="" onClick={() => router.back()} aria-label="뒤로가기">

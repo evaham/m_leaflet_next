@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <HeaderBar />
-        {children}
+        <div className="pb-20">
+          {children}
+        </div>
         <FooterMenu />
       </body>
     </html>
