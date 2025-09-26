@@ -16,7 +16,7 @@ export default function PopupUserInfo({showPopup, setShowPopup}) {
           <div className="overflow-y-auto flex flex-col gap-4 min-h-60 p-4 rounded-xl bg-slate-100">
             <p className="text-lg font-bold leading-tight">온라인 주문 및 쿠폰기능을 사용하기 위해 휴대폰 번호를 입력해주세요</p>
             <div>
-              <lable className="text-sm text-slate-500">휴대폰번호</lable>
+              <label className="text-sm text-slate-500">휴대폰번호</label>
               <div className="relative flex h-9">
                 <div className="absolute left-0 flex items-center justify-center w-13 h-full font-bold text-slate-600">010</div>
                 <input type="phone" className="w-full h-full pl-13 border border-slate-400 focus:border-blue-500 focus:border-2 outline-0 rounded bg-white" placeholder="숫자만 입력해 주세요" />

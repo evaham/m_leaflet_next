@@ -13,6 +13,7 @@ export default function Home() {
     { id: 4, name: "자연그린 김밥단무지4", cart: true, price: 2558, image: "http://file.2ms.kr/WebLink/35546/aba872fd-992d-475f-8df1-7ebd9fc871b4.jpg" },
     { id: 5, name: "자연그린 김밥단무지5", cart: true, price: 2558, image: "//thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/b48d/07cc4310581273a3c0f58b24d6df366900b5699ab17a5e615a8065b53c17.jpg" },
   ];
+  const [activeTab, setActiveTab] = useState(1);
 
   const [listType, setListType] = useState(); 
   // 'type2' - 'grid grid-cols-2' 2단
@@ -21,6 +22,14 @@ export default function Home() {
   // 'style2' - 'flex flex-col' 세로형
   // 'style3' - 'flex flex-col' 텍스트형
 
+  const swiperData = [
+    { id: 1, name: "기본" },
+    { id: 2, name: "type2" },
+    { id: 3, name: "type3" },
+    { id: 4, name: "type4" },
+    { id: 5, name: "style2" },
+    { id: 6, name: "style3" },
+  ];
 
 
   return (
@@ -35,15 +44,17 @@ export default function Home() {
       <div className="sample__banner">
         <img src="http://file.2ms.kr/WebLink/35546/thumb_e8cfe58e-20e4-45c2-aeda-2608098c93dc.png" alt="Sample Banner" className="w-full h-auto" />
       </div>
-      <div className="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden sticky top-28 z-10 flex h-11 border-b bg-white">
-        <div className="scroll_btn swiper-wrapper flex h-full px-1 py-1.5 gap-1 overflow-x-auto scroll-hidden *:flex *:items-center *:justify-center *:shrink-0 *:px-4 *:py-1 *:border *:rounded-full *:flex-nowrap *:text-sm *:font-bold">
-          <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType()}>기본</div>
-          <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType('type2')}>type2</div>
-          <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType('type3')}>type3</div>
-          <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType('type4')}>type4</div>
-          <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType('style2')}>style2</div>
-          <div className="btn_comm btn_0 swiper-slide swiper-slide-active" onClick={()=>setListType('style3')}>style3</div>
-          <div className="btn_comm btn_1 swiper-slide swiper-slide-next">type</div>
+
+      <div className="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden sticky top-28 z-10 flex h-11 border-b border-slate-300 bg-white">
+        <div className="scroll_btn swiper-wrapper flex h-full p-1 gap-1 overflow-x-auto scroll-hidden">
+          { swiperData.map((item) => (
+            <div key={item.id} className={`
+              btn_comm btn_0 swiper-slide swiper-slide-active flex items-center justify-center shrink-0 px-4 py-1 border border-slate-500 rounded-full flex-nowrap text-sm font-bold
+              ${ activeTab === item.id ? 'border-[#21409a] bg-[#21409a] text-white' : 'bg-white' }
+            `} onClick={()=>{setListType(item.name === '기본' ? '' : item.name); setActiveTab(item.id)}}>{item.name}</div>
+            ))
+          }
+
         </div>
         <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
       </div>
@@ -61,7 +72,7 @@ export default function Home() {
           {list.map((item, index) => (
             <li key={index} onClick={() => setShowPopup(true)}>
               <div className="goods__card overflow-hidden group-[.type1,.type2,.type3,.type4]:grid group-[.style2,.style3]:flex gap-1 p-1 rounded-xl border border-slate-300 bg-white">
-                <div className="relative overflow-hidden flex items-center justify-center w-full rounded-lg border border-slate-50 group-[.type2]:h-36 group-[.type3]:h-24 group-[.type4]:h-20 group-[.style2]:size-33 group-[.style3]:hidden">
+                <div className="relative overflow-hidden flex items-center justify-center w-full rounded-lg group-[.type2]:h-36 group-[.type3]:h-24 group-[.type4]:h-20 group-[.style2]:size-33 group-[.style3]:hidden">
                   <img className="max-w-full max-h-full w-auto h-auto" src={item.image} />
                   <div className="absolute top-0 left-0 size-12 group-[.type3,.type4]:hidden">
                     <img src="http://file.2ms.kr/WebLink/35546/20250619_141849_1120.png" />

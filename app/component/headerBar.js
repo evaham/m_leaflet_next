@@ -21,12 +21,13 @@ export default function HeaderBar() {
     "/ListCoupon": "쿠폰함",
     "/ListOrder": "주문내역"
     ,"/DetailOrder": "주문내역 상세보기"
+    ,"/WriteOrder": "주문서 작성"
   };
   const title = titleMap[pathname] || "오류";
 
   return (
-    <>
-      <div className="sticky top-0 z-50 flex items-center justify-center w-full h-16 py-2 bg-blue-900 text-white">
+    <div className="sticky top-0 z-50 ">
+      <div className="flex items-center justify-center w-full h-16 py-2 bg-[#21409a] text-white">
         <div className="flex flex-col items-center justify-center w-12 h-full">
           {!BackButtonPaths.includes(pathname) && (
             <button className="" onClick={() => router.back()} aria-label="뒤로가기">
@@ -58,6 +59,6 @@ export default function HeaderBar() {
         </div>
       </div>
       <PopupMartInfo showPopup={showPopup} setShowPopup={setShowPopup} />
-    </>
+    </div>
   );
 }

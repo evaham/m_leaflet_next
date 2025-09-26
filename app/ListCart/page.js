@@ -1,3 +1,5 @@
+'use client';
+import Link from 'next/link';
 export default function ListCartPage() {
 
 
@@ -13,9 +15,9 @@ export default function ListCartPage() {
   ];
   return (
     <>
-      <div className="cartlist flex flex-col p-1 gap-1">
+      <div className="cartlist flex flex-col p-1 gap-0.5">
         {list.map((item, index) => (
-          <div key={index} className="cartitem relative flex px-2 py-5 gap-2 rounded-lg border border-slate-300 bg-white">
+          <div key={index} className="cartitem relative flex px-2 py-5 gap-2 rounded-lg border border-slate-200 bg-white">
             <div className="overflow-hidden flex items-center justify-center size-20 border border-slate-200 rounded bg-slate-50">
               <img src={item.image} alt={item.name} className="cartitem__img w-full h-auto"/>
             </div>
@@ -42,8 +44,10 @@ export default function ListCartPage() {
           </div>
         ))}
       </div>
-      <div class="cartfoot flex flex-col sticky bottom-20 w-full p-3 bg-white border-t border-slate-300">
-        <button class="cartfoot__btn disabled">총 0건 0원 주문하기</button>
+      <div class="cartfoot sticky bottom-20">
+        <div className="w-full mb-10 p-2 border-t border-slate-200 backdrop-blur-lg">
+          <Link href={"/WriteOrder"} className="cartfoot__btn flex items-center justify-center w-full h-12 mx-auto my-1 rounded-lg bg-rose-500/90 text-lg text-white font-bold disabled:bg-slate-200 disabled:text-slate-400">총 0건 0원 주문하기</Link>
+        </div>
       </div>
     </>
   );
