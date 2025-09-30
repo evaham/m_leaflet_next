@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </div>
       <div className="sample__banner">
-        <Image src="/image/img_main.png" alt="Sample Banner" width={600} height={120} className="w-full h-auto" />
+        <img src="./image/img_main.png" alt="Sample Banner" width={600} height={120} className="w-full h-auto" />
       </div>
 
       <div className="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden sticky top-28 z-10 flex h-11 border-b border-slate-300 bg-white">
