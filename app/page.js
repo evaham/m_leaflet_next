@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </div>
       <div className="sample__banner">
-        <img src="http://file.2ms.kr/WebLink/35546/thumb_e8cfe58e-20e4-45c2-aeda-2608098c93dc.png" alt="Sample Banner" className="w-full h-auto" />
+        <Image src="/image/img_main.png" alt="Sample Banner" width={600} height={120} className="w-full h-auto" />
       </div>
 
       <div className="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden sticky top-28 z-10 flex h-11 border-b border-slate-300 bg-white">
@@ -61,7 +61,7 @@ export default function Home() {
 
       <div className="bg-yellow-100">
         <div className="sample__banner sample__banner--type2 flex items-center justify-center min-h-20 bg-slate-300">
-          <img className="w-full h-auto" src="http://file.2ms.kr/WebLink/35546/thumb_2ea6e138-f331-4496-a8d6-de9f95edc783.png" />
+          <Image className="w-full h-auto" src="/image/img_banner01.png" alt="banner" width={400} height={120} />
         </div>
 
         <ul id="js_changeList" 

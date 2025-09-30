@@ -34,7 +34,7 @@ export default function PopupUserInfo({showPopup, setShowPopup}) {
           </button>
         </div>
       </div>
-
+      {/* 약관 내용 팝업창 */}
       {showPopup2 && (
         <div className="layer__wrap fixed inset-0 flex flex-col items-center justify-center z-50 p-3">
           <div className="layer__bg absolute inset-0 bg-black/50"></div>
@@ -50,11 +50,6 @@ export default function PopupUserInfo({showPopup, setShowPopup}) {
           </div>
         </div>
       )}
-
-
-
-
-
 
     </>
   )
