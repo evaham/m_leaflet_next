@@ -72,7 +72,7 @@ export default function Home() {
           {list.map((item, index) => (
             <li key={index} onClick={() => setShowPopup(true)}>
               <div className="goods__card overflow-hidden group-[.type1,.type2,.type3,.type4]:grid group-[.style2,.style3]:flex gap-1 p-1 rounded-xl border border-slate-300 bg-white">
-                <div className="relative overflow-hidden flex items-center justify-center w-full rounded-lg group-[.type2]:h-36 group-[.type3]:h-24 group-[.type4]:h-20 group-[.style2]:size-33 group-[.style3]:hidden">
+                <div className="relative overflow-hidden flex items-center justify-center w-full min-h-72 rounded-lg group-[.type2]:h-36 group-[.type3]:h-24 group-[.type4]:h-20 group-[.style2]:size-33 group-[.style3]:hidden">
                   <img className="max-w-full max-h-full w-auto h-auto opacity-90" src={item.image} />
                   <div className="absolute top-0 left-0 size-20 group-[.type2,.style2]:size-12 group-[.type3,.type4]:hidden">
                     <img src="http://file.2ms.kr/WebLink/35546/20250619_141849_1120.png" />
