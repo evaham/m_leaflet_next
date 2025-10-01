@@ -7,9 +7,9 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
 
   const list = [
-    { id: 1, name: "텍스트의 길이가 엄청 길어질 경우 어떻게 보여지는지 확인 해 보자 2줄을 넘어갈 경우 보여지는 화면.", cart: true, price: 2558, image: "//thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/b48d/07cc4310581273a3c0f58b24d6df366900b5699ab17a5e615a8065b53c17.jpg" },
-    { id: 2, name: "자연그린 김밥단무지2", cart: false, price: 2558, image: "http://file.2ms.kr/WebLink/35546/74473849-b2a5-47f8-a780-14269353c9ce.jpg" },
-    { id: 3, name: "자연그린 김밥단무지3", cart: false, price: 2558, image: "http://file.2ms.kr/WebLink/35546/4af934d2-5731-4c72-91d5-fc73936b6826.jpg" },
+    { id: 1, name: "텍스트의 길이가 엄청 길어질 경우 어떻게 보여지는지 확인 해 보자 2줄을 넘어갈 경우 보여지는 화면.", cart: true, price: 2558, image: "./image/item01.jpg" },
+    { id: 2, name: "자연그린 김밥단무지2", cart: false, price: 2558, image: "./image/item02.png" },
+    { id: 3, name: "자연그린 김밥단무지3", cart: false, price: 2558, image: "./image/item03.png" },
     { id: 4, name: "자연그린 김밥단무지4", cart: true, price: 2558, image: "http://file.2ms.kr/WebLink/35546/aba872fd-992d-475f-8df1-7ebd9fc871b4.jpg" },
     { id: 5, name: "자연그린 김밥단무지5", cart: true, price: 2558, image: "//thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/b48d/07cc4310581273a3c0f58b24d6df366900b5699ab17a5e615a8065b53c17.jpg" },
   ];
@@ -41,7 +41,7 @@ export default function Home() {
           <span className="popExDate"></span>
         </div>
       </div>
-      <div className="sample__banner">
+      <div className="sample__banner flex items-center justify-center">
         <img src="./image/img_main.png" alt="Sample Banner" className="w-full h-auto" />
       </div>
 
@@ -61,7 +61,7 @@ export default function Home() {
 
       <div className="bg-yellow-100">
         <div className="sample__banner sample__banner--type2 flex items-center justify-center min-h-20 bg-slate-300">
-          <Image className="w-full h-auto" src="./image/img_banner01.png" alt="banner" width={400} height={120} />
+          <img className="w-full h-auto" src="./image/img_banner01.png" alt="banner" width={400} height={120} />
         </div>
 
         <ul id="js_changeList" 
@@ -73,8 +73,8 @@ export default function Home() {
             <li key={index} onClick={() => setShowPopup(true)}>
               <div className="goods__card overflow-hidden group-[.type1,.type2,.type3,.type4]:grid group-[.style2,.style3]:flex gap-1 p-1 rounded-xl border border-slate-300 bg-white">
                 <div className="relative overflow-hidden flex items-center justify-center w-full rounded-lg group-[.type2]:h-36 group-[.type3]:h-24 group-[.type4]:h-20 group-[.style2]:size-33 group-[.style3]:hidden">
-                  <img className="max-w-full max-h-full w-auto h-auto" src={item.image} />
-                  <div className="absolute top-0 left-0 size-12 group-[.type3,.type4]:hidden">
+                  <img className="max-w-full max-h-full w-auto h-auto opacity-90" src={item.image} />
+                  <div className="absolute top-0 left-0 size-20 group-[.type2,.style2]:size-12 group-[.type3,.type4]:hidden">
                     <img src="http://file.2ms.kr/WebLink/35546/20250619_141849_1120.png" />
                   </div>
                   <div className="absolute bottom-1/24 right-1/24 flex items-center justify-center size-11 border border-blue-700 *:fill-blue-500 rounded-full bg-white  group-[.type3,.type4]:size-7 group-[.style2]:size-9" aria-label="장바구니">
@@ -84,7 +84,7 @@ export default function Home() {
                   </div>
                 </div>
                 {listType === 'style3' ? (
-                  <div className="relative flex flex-wrap *:font-bold *:leading-tight text-right">
+                  <div className="relative flex flex-wrap w-full *:font-bold *:leading-tight text-right">
                     <div className="w-full mt-2 text-base leading-tight line-clamp-2 text-left">{item.name}</div>
                     <div className="flex items-end previewEtc1 text-sm text-blue-500 leading-none mr-3 ml-auto text-right">공a유이미지이미지</div>
                     <div className="mt-1 text-3xl font-[tahoma] text-red-500 inline-block text-right">{item.price.toLocaleString()}</div>
